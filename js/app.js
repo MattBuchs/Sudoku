@@ -2,7 +2,13 @@ import {
     generateRandomNumber,
     generateUniqueRandomNumbers,
 } from "./randomNumber.js";
-import { emptyGrid } from "./utils.js";
+import { addEventListener, emptyGrid } from "./utils.js";
+
+export const changeDifficulty = () => {
+    const select = document.querySelector("#difficulty-select");
+    emptyGrid();
+    createGrid(select.value);
+};
 
 const createGrid = (difficulty) => {
     const COLS = 9;
@@ -56,6 +62,7 @@ const createGrid = (difficulty) => {
     }
 
     removeNumbers(difficulty);
+    addEventListener();
 };
 
 const removeNumbers = (difficulty) => {
@@ -83,12 +90,6 @@ const removeNumbers = (difficulty) => {
     emptyBoxes.forEach((number) => {
         boxs[number].textContent = "";
     });
-};
-
-export const changeDifficulty = () => {
-    const select = document.querySelector("#difficulty-select");
-    emptyGrid();
-    createGrid(select.value);
 };
 
 document.addEventListener("DOMContentLoaded", () => {
