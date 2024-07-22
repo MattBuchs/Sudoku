@@ -112,10 +112,31 @@ body {
     color: #fff;
 }
 
+.color-extend {
+    background-color: #2070d81c;
+}
+
+.background-red {
+    background-color: rgba(255, 0, 0, 0.249);
+}
+
 .box-selected {
+    background-color: #2070d880;
+    border: 2px solid #095bc7 !important;
+}
+
+.background-red2 {
+    background-color: rgba(255, 0, 0, 0.249);
+}
+
+.background-blue {
     background-color: #2070d880;
 }
 
-.color-extend {
-    background-color: #2070d829;
+.text-blue {
+    color: #095bc7;
+}
+
+.text-red {
+    color: red;
 }

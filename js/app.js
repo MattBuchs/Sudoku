@@ -39,6 +39,7 @@ const createGrid = (difficulty) => {
             }
 
             div.textContent = number;
+            div.classList.add("color-black");
 
             if (i === 2 || i === 5) div.style.borderBottom = "1px solid #000";
             if (j === 2 || j === 5) div.style.borderRight = "1px solid #000";
@@ -61,8 +62,14 @@ const createGrid = (difficulty) => {
         i++;
     }
 
+    const gridArr = [];
+    const gridNumber = document.querySelectorAll("#sudoku div");
+    gridNumber.forEach((el) => {
+        gridArr.push(el.textContent);
+    });
+
     removeNumbers(difficulty);
-    addEventListener();
+    addEventListener(gridArr);
 };
 
 const removeNumbers = (difficulty) => {
@@ -89,6 +96,8 @@ const removeNumbers = (difficulty) => {
 
     emptyBoxes.forEach((number) => {
         boxs[number].textContent = "";
+        boxs[number].classList.add("text-blue");
+        boxs[number].classList.remove("color-black");
     });
 };
 
